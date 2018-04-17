@@ -1,7 +1,16 @@
 'use strict'
 
 // Instanciando los Objetos app y BrowserWindopw
-const { app, BrowserWindow } = require('electron')
+// const { app, BrowserWindow } = require('electron')
+
+//con electron compile, para trabajar con sintaxis EcmaScript 6
+import { app, BrowserWindow } from 'electron'
+import devtools from './devtools' //devtools solo se usa en entorno de desarollo
+
+//identificar si se esta trabajando en desarollo | variable de entorno
+if (process.env.NODE_ENV === 'development') {
+  devtools()
+} //setear variable 'dev' en package.json
 
 // Realiza un dir de todo el contenido del objeto app
 // console.dir(app)
